@@ -1,0 +1,45 @@
+.botonesControl{
+	-fx-pref-height: 32 ;
+	-fx-pref-width: 32 ;
+}
+
+#mvAlante{
+	-fx-background-image: url("./images/alante.png");
+    -fx-background-position: center;
+    -fx-background-size: 32;
+    -fx-background-repeat: no-repeat;
+}
+
+#mvAtras{
+	-fx-background-image: url("./images/patras.png");
+    -fx-background-position: center center;
+    -fx-background-size: 32 32;
+    -fx-background-repeat: no-repeat;
+}
+
+#mvRotDer{
+	-fx-background-image: url("./images/der.png");
+    -fx-background-position: center;
+    -fx-background-size: 32;
+    -fx-background-repeat: no-repeat;
+}
+#identificador {
+
+}
+#mvRotIzq{
+	-fx-background-image: url("./images/izq.png");
+    -fx-background-position: center;
+    -fx-background-size: 32;
+    -fx-background-repeat: no-repeat;
+}
+
+#mvStop{
+	-fx-background-image: url("./images/stop.png");
+    -fx-background-position: center;
+    -fx-background-size: 32;
+    -fx-background-repeat: no-repeat;
+}
+
+.panelControl{
+    -fx-background-color:pink;
+}

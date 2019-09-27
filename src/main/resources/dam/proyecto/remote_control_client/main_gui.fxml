@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dam.proyecto.remote_control_client.MainController">
+	<children>
+		<MenuBar>
+			<menus>
+				<Menu mnemonicParsing="false" text="Archivo">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#archivoConectarCon" text="Conectar con..." />
+						<MenuItem mnemonicParsing="false" onAction="#archivoElegirServidor" text="Elegir servidor" />
+						<MenuItem mnemonicParsing="false" onAction="#archivoDesconectar" text="Desconectar" />
+						<MenuItem mnemonicParsing="false" onAction="#archivoSalir" text="Salir" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<TextArea fx:id="areaNotificaciones" prefHeight="100.0" prefWidth="200.0" />
+		<Pane prefHeight="200.0" prefWidth="360.0" styleClass="panelControl" stylesheets="@main_style.css">
+			<children>
+				<Group id="luces" layoutX="26.0" layoutY="36.0" />
+				<Group layoutX="224.0" layoutY="-40.0">
+					<children>
+						<Label layoutX="23.0" layoutY="62.0" text="Intermitentes" />
+						<RadioButton fx:id="intermitenteDerecho" layoutX="23.0" layoutY="117.0" mnemonicParsing="false" onAction="#botonesIntermitentes" text="Derecho">
+							<toggleGroup>
+								<ToggleGroup fx:id="intermitentes" />
+							</toggleGroup>
+						</RadioButton>
+						<RadioButton fx:id="intermitenteIzquierdo" layoutX="23.0" layoutY="79.0" mnemonicParsing="false" onAction="#botonesIntermitentes" text="Izquierdo" toggleGroup="$intermitentes" />
+						<RadioButton layoutX="23.0" layoutY="98.0" mnemonicParsing="false" onAction="#botonesIntermitentes" selected="true" text="Reposo" toggleGroup="$intermitentes" />
+						<ToggleButton fx:id="emergencias" layoutX="19.0" layoutY="136.0" mnemonicParsing="false" onAction="#botonesIntermitentes" text="Emergencias" />
+					</children>
+				</Group>
+				<Group layoutX="-205.0">
+					<children>
+						<Button fx:id="mvAlante" layoutX="252.0" layoutY="36.0" mnemonicParsing="false" onMousePressed="#botonesDireccionNew" onMouseReleased="#botonesDireccionNew" styleClass="botonesControl" text="Palante" textFill="TRANSPARENT" />
+						<Button fx:id="mvAtras" layoutX="252.0" layoutY="100.0" mnemonicParsing="false" onMousePressed="#botonesDireccionNew" onMouseReleased="#botonesDireccionNew" styleClass="botonesControl" text="Patras" textFill="TRANSPARENT" />
+						<Button fx:id="mvRotIzq" layoutX="220.0" layoutY="68.0" mnemonicParsing="false" onMousePressed="#botonesDireccionNew" onMouseReleased="#botonesDireccionNew" styleClass="botonesControl" text="Izquierda" textFill="TRANSPARENT" />
+						<Button fx:id="mvRotDer" layoutX="284.0" layoutY="68.0" mnemonicParsing="false" onMousePressed="#botonesDireccionNew" onMouseReleased="#botonesDireccionNew" styleClass="botonesControl" text="Derecha" textFill="TRANSPARENT" />
+						<Button fx:id="mvStop" layoutX="252.0" layoutY="68.0" mnemonicParsing="false" onMousePressed="#botonClaxon" onMouseReleased="#botonClaxon" styleClass="botonesControl" text="Parar" textFill="TRANSPARENT" />
+					</children>
+				</Group>
+				<Label fx:id="labelServidor" text="Servidor: " />
+						<ToggleButton fx:id="encenderLuces" layoutX="167.0" layoutY="22.0" mnemonicParsing="false" onAction="#botonLuces" text="Luces" />
+			</children>
+		</Pane>
+	</children>
+</VBox>
